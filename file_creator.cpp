@@ -19,8 +19,12 @@ int main()
     file_ptr = &file;
     creat(file_ptr,permissions); //Runs into error, consider what mode means
     
-    
-    
+    //Adder
+    add(*void b, int b)
+    {
+        
+        
+    }
     
 }
 
