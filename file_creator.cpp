@@ -25,7 +25,9 @@ int main()
     char* file_ptr;
     char* test;
     //int permissions = 0666
-    int mode = 0600;
+    //int mode = 0600;
+    int mode;
+    string perm;
     int val;
     cout << "Enter a file name:";
     cin >> test;
@@ -38,6 +40,8 @@ int main()
     cout << "read and write and execute" << endl;
     cout << "write and execute" << endl;
     cout << "execute" << endl;
+    cin >> perm;
+    mode = m[perm];
     file_ptr = test;
     val = creat(file_ptr,mode);
     
