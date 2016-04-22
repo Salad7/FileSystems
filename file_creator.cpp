@@ -16,9 +16,7 @@ int main()
     m["read and write"] = 0600;
     m["read and execute"] = 0500;
     m["read and write and execute"] = 0700;
-    
     m["write and execute"] = 300;
-    
     m["execute"] = 100;
     
     //char file;
@@ -43,6 +41,7 @@ int main()
     cin >> perm;
     mode = m[perm];
     file_ptr = test;
+    cout << mode;
     val = creat(file_ptr,mode);
     
     
