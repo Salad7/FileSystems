@@ -20,8 +20,12 @@ int main()
     //file_ptr = file;
     val = creat(file_ptr,mode); //Runs into error, consider what mode means
     
-    
-    
+    //Adder
+    add(*void b, int b)
+    {
+        
+        
+    }
     
 }
 
