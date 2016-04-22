@@ -12,14 +12,14 @@ using namespace std;
 int main()
 {
     std::map<std::string, int> m; //Hashmap to store the permissions
-    m["read"] = 
+    m["read"] = 0400;
     m["read and write"] = 0600;
-    m["read and execute"] = 0666
-    m["read and write and execute"] = 
+    m["read and execute"] = 0500;
+    m["read and write and execute"] = 0700;
     
-    m["write and execute"]
+    m["write and execute"] = 300;
     
-    m["execute"]
+    m["execute"] = 100;
     
     //char file;
     char* file_ptr;
@@ -31,8 +31,13 @@ int main()
     cin >> test;
     //cout << "What permissions should the file have? FOR NOW ASSUMING mode" << endl;
     //file_ptr = file;
-    cout << "What permissions would u like to give to the owner of this group?"
-    
+    cout << "What permissions would u like to give to the owner of this group?" << endl;
+    cout << "read" << endl;
+    cout << "read and write" << endl;
+    cout << "read and execute" << endl;
+    cout << "read and write and execute" << endl;
+    cout << "write and execute" << endl;
+    cout << "execute" << endl;
     file_ptr = test;
     val = creat(file_ptr,mode);
     
