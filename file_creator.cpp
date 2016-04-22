@@ -14,18 +14,15 @@ int main()
     //int permissions = 0666
     mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
     int val;
+    int close;
    // cout << "Enter a file name: " << endl;
     //cin >> "/filename" + file_ptr;
     //cout << "What permissions should the file have? FOR NOW ASSUMING mode" << endl;
     //file_ptr = file;
     val = creat(file_ptr,mode); //Runs into error, consider what mode means
     
-    //Adder
-    add(*void b, int b)
-    {
-        
-        
-    }
     
+    
+    close(val);
 }
 
