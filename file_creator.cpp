@@ -5,27 +5,24 @@
 #include <string>
 #include <iostream>
 #include <map>
-
+#include <ios>
 using namespace std;
 
 
 int main()
 {
-    std::map<std::string, int> m; //Hashmap to store the permissions
+    std::map<std::string,int >m; //Hashmap to store the permissions
     std::map<std::string,int>::iterator mode;
-    m["read"] = 0400;
-    m["read-write"] = 0600;
-    m["read-execute"] = 0500;
-    m["read-write-execute"] = 0700;
-    m["write-execute"] = 0300;
-    m["execute"] = 0100;
+    m["read"] = 400;
+    m["read-write"] = 600;
+    m["read-execute"] = 500;
+    m["read-write-execute"] = 700;
+    m["write-execute"] = 300;
+    m["execute"] = 100;
     
     //char file;
-    char* file_ptr;
-    char* test;
-    //int permissions = 0666
-    //int mode = 0600;
-    //int mode;
+    string file_ptr;
+    string test;
     string perm;
     int val;
     cout << "Enter a file name:";
@@ -40,9 +37,42 @@ int main()
     cout << "write-execute" << endl;
     cout << "execute" << endl;
     cin >> perm;
-    mode = m.find("execute");
-    file_ptr = test;
-    val = creat(file_ptr,m.find(perm)->second);
+    
+   if(perm.compare("read") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0400);
+    }
+    else if(perm.compare("read-write") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0600);
+    }
+    else if(perm.compare("read-execute") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0500);
+    }
+    else if(perm.compare("read-write-execute") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0700);
+    }
+    else if(perm.compare("write-execute") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0300);
+    }
+    else if(perm.compare("execute") == 0 )
+    {
+     file_ptr = test;
+    val = creat(file_ptr.c_str(),0100);
+    }
+    else
+    {
+        cout << "Error has occured exiting program";
+        exit(1);
+    }
     
     
     

@@ -16,17 +16,24 @@ int main()
     size_t count;
     ssize_t rd;
     string p;
-    int fd = open("my_file_1.txt",flags,mode); //Open the file
+    string filetoRead;
+    
+    cout << "What is the file to read";
+    cin >> filetoRead;
+    
+    int fd = open(filetoRead.c_str(),flags,mode); //Open the file
     count = sizeof(buf);
     rd = read(fd,buf,count);
-    
+    if(rd == -1)
+    {
+        cout << "Error has a occured exiting program";
+        exit(1);
+    }
+    else
     for(int i = 0; i < count; i++)
     {
             cout << (buf[i]);
     }
-    
-    
-   // cout << buf[6];
     close(rd);
     
     
